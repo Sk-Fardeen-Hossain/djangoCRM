@@ -16,9 +16,14 @@ def home(request):
             return redirect('home')
         else:
             messages.success(request,"There was an error logging in, Please try again...")
+            return redirect('home')
     else:
         return render(request, 'home.html',{})
 def login_user(request):
     pass
 def logout_user(request):
+    logout(request)
+    messages.success(request, "You have been logged out...")
+    return redirect('home')
+def register_user(request):
     pass
